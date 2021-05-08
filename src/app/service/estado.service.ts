@@ -19,12 +19,12 @@ export class EstadoService {
   }
 
   readMunicipio(idEstado: string): Observable<Estado[]> {
-    return this.http.get<Estado[]>(this.baseUrlMunicipio + idEstado + "/municipios")
+    return this.http.get<Estado[]>(this.baseUrlMunicipio + idEstado + "/municipios?orderBy=nome")
     console.log(this.baseUrlEstados + idEstado + "/municipios")
   }
 
   readDistrito(idMunicipio: string): Observable<Estado[]> {
-    return this.http.get<Estado[]>(this.baseUrlDistrito + idMunicipio + "/distritos")
+    return this.http.get<Estado[]>(this.baseUrlDistrito + idMunicipio + "/distritos?orderBy=nome")
   }
 
 }
