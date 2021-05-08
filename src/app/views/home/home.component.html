@@ -1,0 +1,30 @@
+
+<mat-card class="home mat-elevation-z3">
+    <mat-card-title>Estados</mat-card-title>
+    <mat-form-field appearance="fill">
+        <mat-label>Selecione um Estado</mat-label>
+        <select (change)="onChangeSelectEstado($event)" matNativeControl required>
+            <option value="0"></option>
+            <option [value]="estado.id" *ngFor="let estado of estados" >{{ estado.nome}}</option>
+        </select>
+    </mat-form-field>
+
+    <mat-card-title>Municípios</mat-card-title>
+    <mat-form-field appearance="fill">
+        <mat-label>Selecione um Município</mat-label>
+        <select (change)="onChangeSelectMunicipio($event)" matNativeControl>
+            <option value="0"></option>
+            <option [value]="municipio.id" *ngFor="let municipio of municipios" >{{ municipio.nome}}</option>
+        </select>
+    </mat-form-field>
+    
+    
+</mat-card>
+
+<mat-card class="home mat-elevation-z3">
+    <mat-card-title>Lista de Distritos:</mat-card-title>
+    <mat-grid-list cols="3" *ngFor="let distrito of distritos">
+        <p>{{ distrito.nome }}</p>
+    </mat-grid-list>
+</mat-card>
+
